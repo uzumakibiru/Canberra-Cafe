@@ -1,0 +1,42 @@
+{%extends "base.html"%} {%block title%}Resturants & Cafe{%endblock%} {%block
+content%}
+<table class="container table table-dark table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Address</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Reviews</th>
+      <th scope="col">People Spend</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Action</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  {%for resturant in resturants:%}
+  <tbody>
+    <tr>
+      {%for item in resturant:%}{%if item is string and item.startswith("http")%}
+      <td><a href="{{item}}" target="_blank" >Map Link</a></td>
+      {%else:%}
+      <td>{{item}}</td>
+     
+      {%endif%}{%endfor%}
+      <td><a href="{{url_for('update',id=resturant[0])}}">Update</a></td>
+      <td><a href="{{url_for('delete',id=resturant[0])}}">Delete</a></td>
+      
+    </tr>
+  </tbody>
+  {%endfor%}
+</table>
+<div class="container">
+  <a href="{{url_for('add')}}"
+    ><button type="button" class="btn btn-primary btn-lg px-4 gap-3">
+      ADD
+    </button></a>
+</div>
+
+  {%endblock%}
+</div>

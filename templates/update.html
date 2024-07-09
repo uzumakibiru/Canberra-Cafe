@@ -1,0 +1,90 @@
+{%extends "base.html"%} {%block title%}Update{%endblock%} {%block content%}
+<div class="container">
+  <form
+    class="container"
+    action="{{url_for('update',id=resturant[0])}}"
+    method="POST"
+  >
+    <div class="col-md-4">
+      <label for="validationDefault01" class="form-label">Cafe Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationDefault01"
+        name="cafename"
+        value="{{resturant[1]}}"
+        required
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault02" class="form-label">Type</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationDefault02"
+        name="type"
+        value="{{resturant[2]}}"
+        required
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault05" class="form-label">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationDefault05"
+        name="address"
+        value="{{address}}"
+        required
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault02" class="form-label">Rating</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationDefault02"
+        name="rating"
+        value="{{resturant[4]}}"
+        required
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault03" class="form-label">Review</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationDefault03"
+        name="review"
+        value="{{resturant[5]}}"
+        required
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault02" class="form-label">Price</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationDefault02"
+        name="price"
+        value="{{resturant[6]}}"
+        required
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault05" class="form-label">Phone</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationDefault05"
+        name="phone"
+        value="{{resturant[7]}}"
+        required
+      />
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Update</button>
+    </div>
+  </form>
+</div>
+{%endblock%}
